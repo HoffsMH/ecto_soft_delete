@@ -13,7 +13,7 @@ Adds columns, fields, and queries for soft deletion with Ecto.
 
 ### Migrations
 
-In migrations for schemas to support soft deletion, import `Ecto.SoftDelete.Migration`. Next, add `soft_delete_columns()` when creating a table
+In migrations for schemas to support soft deletion, import `Ecto.SoftDelete.Migration`. Next, add `soft_delete_column()` when creating a table
 
 ```elixir
 defmodule MyApp.Repo.Migrations.CreateUser do
@@ -25,7 +25,7 @@ defmodule MyApp.Repo.Migrations.CreateUser do
       add :email, :string
       add :password, :string
       timestamps()
-      soft_delete_columns()
+      soft_delete_column()
     end
   end
 end

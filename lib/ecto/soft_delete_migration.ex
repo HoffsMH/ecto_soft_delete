@@ -17,13 +17,18 @@ defmodule Ecto.SoftDelete.Migration do
             add :email, :string
             add :password, :string
             timestamps()
-            soft_delete_columns()
+            soft_delete_column()
           end
         end
       end
 
   """
-  def soft_delete_columns do
+
+  def soft_delete_column() do
     add(:deleted_at, :utc_datetime, [])
+  end
+
+  def soft_delete_columns() do
+    soft_delete_column()
   end
 end
